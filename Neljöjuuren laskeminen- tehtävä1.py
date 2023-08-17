@@ -1,3 +1,4 @@
+# Miko Savolainen
 from math import sqrt # importaa matikka funktion
 #kysyy käyttäjältä arvoa
 a = int(input("anna arvo1:"))
