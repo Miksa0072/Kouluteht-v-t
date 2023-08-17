@@ -1,1 +1,1 @@
-# Python-harjoitus-1-sqrt-laskeminen
+# Koulu tehtäviä
