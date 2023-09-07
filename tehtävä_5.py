@@ -23,6 +23,4 @@ def main():
     print("Pyöritettynä:", tulos)
 
 
-# En keksinyt muuta tapaa aloittaa Funktiota :)
-if 0 == 0:
     main()
