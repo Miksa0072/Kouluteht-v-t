@@ -1,7 +1,35 @@
-import math
+import random
 
-luku = input("Anna 7 lukua väliltä 1-39:")
+def luo_lottorivi():
+    return random.sample(range(1, 40), 7)
 
-kierros = input("Kuinka monta riviä arvotaan:")
+def tarkista_voitto(annettu_rivi, arvottu_rivi):
+    oikein = 0
+    for numero in annettu_rivi:
+        if numero in arvottu_rivi:
+            oikein += 1
+    return oikein
 
-print(luku)
+def main():
+    annettu_rivi = [int(x) for x in input("Anna lottorivi (7 lukua väliltä 1-39): ").split(",")]
+    arvontojen_maara = int(input("Kuinka monta riviä arvotaan: "))
+
+    voitot = [0, 0, 0, 0]  # Voittojen määrä 4, 5, 6 ja 7 oikein
+    
+    for _ in range(arvontojen_maara):
+        arvottu_rivi = luo_lottorivi()
+        oikein = tarkista_voitto(annettu_rivi, arvottu_rivi)
+        if oikein >= 4:
+            voitot[oikein - 4] += 1
+
+    for i, voittojen_maara in enumerate(voitot):
+        if i == 0:
+            print(f"{voittojen_maara} kertaa neljä oikein!")
+        elif i == 1:
+            print(f"{voittojen_maara} kertaa viisi oikein!")
+        elif i == 2:
+            print(f"{voittojen_maara} kertaa kuusi oikein!")
+        elif i == 3:
+            print(f"{voittojen_maara} kertaa seitsemän oikein!")
+
+main()
