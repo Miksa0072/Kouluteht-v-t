@@ -14,7 +14,7 @@ def main():
     annettu_rivi = [int(x) for x in input("Anna lottorivi (7 lukua väliltä 1-39): ").split(",")]
     arvontojen_maara = int(input("Kuinka monta riviä arvotaan: "))
 
-    voitot = [0, 0, 0, 0]  # Voittojen määrä 4, 5, 6 ja 7 oikein
+    voitot = [0, 0, 0, 0]
     
     for _ in range(arvontojen_maara):
         arvottu_rivi = luo_lottorivi()
